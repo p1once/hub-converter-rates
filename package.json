@@ -1,0 +1,14 @@
+{
+  "name": "hub-converter-rates",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "collect": "node collector.mjs",
+    "test": "node --test tests/collector.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

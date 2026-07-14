@@ -1,0 +1,52 @@
+name: Update live rates
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: hub-converter-rates
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Restore last published snapshot
+        continue-on-error: true
+        run: |
+          mkdir -p public/latest
+          for file in catalog crypto fiat meta; do
+            curl --fail --silent --show-error --location \
+              "https://p1once.github.io/hub-converter-rates/latest/${file}.json" \
+              --output "public/latest/${file}.json" || true
+          done
+      - run: npm ci
+      - run: npm test
+      - run: npm run collect
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy rates
+        id: deployment
+        uses: actions/deploy-pages@v4

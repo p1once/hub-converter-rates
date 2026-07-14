@@ -4,6 +4,7 @@ Collecteur de taux sans clé API pour Hub Converter. Il agrège les marchés pub
 
 ## Fichiers publiés
 
+- `public/latest/snapshot.json` : bundle atomique utilisé par l’extension pour éviter tout mélange de générations entre fichiers.
 - `public/latest/catalog.json` : catalogue des actifs ayant un marché réel.
 - `public/latest/crypto.json` : taux crypto agrégés en USD.
 - `public/latest/fiat.json` : taux fiat institutionnels avec base EUR.

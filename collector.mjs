@@ -375,6 +375,14 @@ async function readPreviousJson(filename) {
 async function writeSnapshots(snapshots) {
   await mkdir(OUTPUT_DIR, { recursive: true });
   const files = {
+    'snapshot.json': {
+      schemaVersion: 1,
+      generatedAt: snapshots.meta.generatedAt,
+      catalog: snapshots.catalog,
+      crypto: snapshots.crypto,
+      fiat: snapshots.fiat,
+      meta: snapshots.meta
+    },
     'catalog.json': snapshots.catalog,
     'crypto.json': snapshots.crypto,
     'fiat.json': snapshots.fiat,

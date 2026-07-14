@@ -27,7 +27,7 @@ jobs:
         continue-on-error: true
         run: |
           mkdir -p public/latest
-          for file in catalog crypto fiat meta; do
+          for file in snapshot catalog crypto fiat meta; do
             curl --fail --silent --show-error --location \
               "https://p1once.github.io/hub-converter-rates/latest/${file}.json" \
               --output "public/latest/${file}.json" || true

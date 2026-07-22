@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr" data-hub-converter-page>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Documentation de l’extension Hub Converter.">
+  <link rel="canonical" href="https://p1once.github.io/hub-converter-rates/hub-converter/help.html">
+  <title>Hub Converter — Documentation</title>
+  <link rel="stylesheet" href="legal.css">
+</head>
+<body>
+  <main>
+    <article class="legal-card">
+      <p class="eyebrow">Hub Converter</p>
+      <h1>Documentation</h1>
+      <p class="meta">Conversions rapides dans le popup et sur les pages web.</p>
+
+      <h2>Utiliser le popup</h2>
+      <p>Choisissez une catégorie, saisissez une valeur, puis sélectionnez les unités de départ et d’arrivée. Le bouton d’inversion échange les deux unités sans modifier la valeur saisie.</p>
+
+      <h2>Parcourir les familles</h2>
+      <p>Les 181 familles sont réparties dans 13 domaines : finance, quotidien, mécanique et fluides, énergie et thermique, électricité et magnétisme, chimie et laboratoire, médecine et santé, lumière et optique, acoustique, rayonnements, numérique et typographie, Terre et agriculture, sciences générales. La recherche accepte les noms de familles dans les quatre langues prises en charge.</p>
+
+      <h2>Saisie numérique et raccourcis</h2>
+      <p>Lorsque le champ « Convertir » est actif, les flèches ↑ et ↓ ajustent la valeur de 1, Maj avec ces flèches ajuste de 10, et la molette augmente ou diminue la valeur selon son sens. Les boutons latéraux restent disponibles. Les valeurs négatives et la virgule décimale sont conservées. Ces commandes sont neutralisées lorsqu’une expression complète est saisie.</p>
+
+      <h2>Unités avancées automatiques</h2>
+      <p>Le champ « Convertir » accepte un nombre ordinaire ou une expression complète comme <code>1 kg*m/s^2 -&gt; lbf</code>, <code>250 kPa vers psi</code> ou <code>10 MiB/s =&gt; Mbit/s</code>. L’écriture scientifique équivalente, par exemple <code>kg·m/s²</code>, reste également acceptée. Les séparateurs <code>-&gt;</code>, <code>=&gt;</code> et les mots de liaison français, anglais, espagnols ou allemands sont reconnus. Le moteur choisit automatiquement la catégorie compatible et affiche le résultat dans la carte habituelle. Une conversion entre dimensions physiques incompatibles est refusée explicitement.</p>
+
+      <h2>Conversions dépendantes du contexte</h2>
+      <p>Certaines conversions ne possèdent pas de réponse unique sans information supplémentaire. Le moteur demande alors le contexte requis : densité pour masse/volume, durée pour énergie/puissance ou données/débit, tension pour puissance/courant. Il n’invente jamais une valeur physique manquante.</p>
+
+      <h2>Langues et formats</h2>
+      <p>L’interface, les familles et les unités nommées sont disponibles en français, anglais, espagnol et allemand. Les nombres utilisant une virgule ou un point décimal, les espaces de groupement et le signe moins Unicode sont reconnus.</p>
+
+      <h2>Utiliser le widget</h2>
+      <p>Ouvrez d’abord Hub Converter dans l’onglet où vous souhaitez utiliser le widget, puis sélectionnez une valeur accompagnée d’une unité. Le widget apparaît près de la sélection lorsqu’elle peut être reconnue. Vous pouvez choisir l’unité cible ou copier le résultat.</p>
+
+      <h2>Taux de change</h2>
+      <p>Les devises et cryptomonnaies utilisent uniquement des taux réels téléchargés et mis en cache. La recherche crypto utilise le catalogue agrégé Hub Converter, produit depuis plusieurs marchés et distribué par plusieurs miroirs statiques. Si aucun marché réel n’existe, l’extension indique que l’actif n’est pas coté au lieu d’utiliser une valeur fictive.</p>
+
+      <h2>Historique</h2>
+      <p>L’historique est facultatif et désactivé par défaut. Vous pouvez l’activer, le limiter, l’exporter ou l’effacer depuis les paramètres. Il reste désactivé en navigation privée.</p>
+
+      <h2>Détection fiable et unités ambiguës</h2>
+      <p>Le moteur couvre 181 familles, 1 481 unités déclarées et 48 321 chemins directs testés, auxquels s’ajoutent les expressions dimensionnelles composables. Lorsqu’un même symbole peut représenter plusieurs grandeurs physiques, les conversions restent disponibles manuellement mais la détection automatique conserve uniquement un contexte canonique. Les unités arbitraires ou dépendantes d’une substance, d’un protocole ou de conditions de référence ne sont pas converties avec un facteur supposé.</p>
+
+      <div class="actions">
+        <a class="button" href="/hub-converter-rates/">Hub Converter</a>
+        <a class="button secondary" href="privacy.html">Lire la politique de confidentialité</a>
+      </div>
+    </article>
+  </main>
+  <script src="i18n.js"></script>
+</body>
+</html>
